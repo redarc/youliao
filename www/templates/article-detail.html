@@ -1,0 +1,22 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+
+<ion-view view-title="回答">
+  <ion-content>
+    <ion-list>
+    <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="answer in answers" ng-click="openLink(answer.questionid, answer.answerid)">
+      <img ng-src="{{answer.avatar}}">
+      <h2>{{answer.title}}</h2>
+      <p>{{answer.summary}}</p>
+      {{answer.authorname}}
+      {{answer.time}}&nbsp{{answer.name}}&nbsp赞同{{answer.vote}}
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </ion-item>
+    </ion-toggle>
+    </ion-list>
+  </ion-content>
+</ion-view>

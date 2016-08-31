@@ -1,0 +1,258 @@
+<ion-view view-title="{{user.name}}">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-avatar">
+        <img ng-src="{{user.avatar}}" style="width: 64px; height: 64px">
+        <h2>{{user.name}}</h2>
+        <p>{{user.signature}}</p>
+      </div>
+      <div class="item item-text-wrap">
+        <h2>自我介绍</h2>
+        <p>{{user.description}}</p>
+      </div>
+
+      <div class="item item-text-wrap">
+        <h2>详细信息</h2>
+        <div class="row">
+          <div class="col col-70 item-text-wrap">提问数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.ask}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">回答数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.answer}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">专题文章数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.post}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">赞同数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.agree}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">1日赞同数增加</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.agreei}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">1日赞同数增幅</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.agreeiratio}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">7日赞同数增加</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.agreeiw}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">7日赞同数增幅</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.agreeiratiow}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">平均赞同</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.ratio}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">关注数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.followee}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">被关注数（粉丝）</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.follower}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">1日被关注数增加</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.followeri}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">1日被关注数增幅</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.followiratio}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">7日被关注数增加</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.followeriw}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">7日被关注数增幅</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.followiratiow}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">感谢数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.thanks}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">感谢/赞同比</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.tratio}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">收藏数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.fav}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">收藏/赞同比</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.fratio}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">公共编辑数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.logs}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">最高赞同</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.mostvote}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">最高赞同占比</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.mostvotepercent}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">前5赞同</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.mostvote5}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">前5赞同占比</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.mostvote5percent}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">前10赞同</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.mostvote10}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">前10赞同占比</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.mostvote10percent}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">赞同≥10000答案数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.count10000}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">赞同≥7000答案数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.count7000}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">赞同≥3000答案数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.count3000}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">赞同≥1000答案数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.count1000}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">赞同≥700答案数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.count700}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">赞同≥300答案数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.count300}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-70 item-text-wrap">赞同≥100答案数</div>
+          <div class="col col-30 item-text-wrap">{{user.detail.count100}}</div>
+        </div>
+      </div>
+      <div class="item item-text-wrap">
+        <h2>七星阵排名</h2>
+        <div class="row">
+          <div class="col col-80 item-text-wrap">回答数+专栏文章数排名</div>
+          <div class="col col-20 item-text-wrap">{{user.star.answerrank}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-80 item-text-wrap">赞同数排名</div>
+          <div class="col col-20 item-text-wrap">{{user.star.agreerank}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-80 item-text-wrap">平均赞同排名</div>
+          <div class="col col-20 item-text-wrap">{{user.star.ratiorank}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-80 item-text-wrap">被关注数排名</div>
+          <div class="col col-20 item-text-wrap">{{user.star.followerrank}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-80 item-text-wrap">赞同超1000的回答数排名</div>
+          <div class="col col-20 item-text-wrap">{{user.star.count1000rank}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-80 item-text-wrap">赞同超100的回答数排名</div>
+          <div class="col col-20 item-text-wrap">{{user.star.count100rank}}</div>
+        </div>
+      </div>
+
+<!--
+      <div class="item item-text-wrap">
+        <h2>近日动态</h2>
+        <ion-list>
+          <ion-item class="item" type="item-text-wrap" ng-repeat="dailyTrend in trend">
+
+            <div class="row">
+              <div class="col col-70 item-text-wrap">日期</div>
+              <div class="col col-70 item-text-wrap">{{dailyTrend.date}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col col-70 item-text-wrap">回答数+专栏文章数</div>
+              <div class="col col-70 item-text-wrap">{{dailyTrend.answer}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col col-70 item-text-wrap">赞同数</div>
+              <div class="col col-70 item-text-wrap">{{dailyTrend.agree}}</div>
+            </div>
+
+            <div class="row">
+              <div class="col col-70 item-text-wrap">被关注数</div>
+              <div class="col col-70 item-text-wrap">{{dailyTrend.follower}}</div>
+            </div>
+
+          </ion-item>
+        </ion-list>
+      </div>
+-->
+
+      <div class="item item-text-wrap">
+        <h2>高票答案</h2>
+        <ion-list>
+          <ion-item class="item-icon-right" type="item-text-wrap" ng-repeat="answer in topanswers" ng-click="openLink(answer.link)">
+            <h2>{{answer.title}}</h2>
+            <p>赞同数 {{answer.agree}}  发表时间 {{answer.date}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

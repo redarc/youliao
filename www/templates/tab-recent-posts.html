@@ -1,0 +1,14 @@
+<ion-view view-title="新料" on-swipe-right="goForward()" on-swipe-left="goBack()">
+  <ion-content>
+    <div class="list">
+      <ion-item class="item-text-wrap card item-center" ng-repeat="article in articles" href="#/tab/recent-posts/{{article.id}}">
+        <p>{{article.excerpt}}</p>
+        <img class="full-image" src="{{article.pic}}">
+        <p class="row">
+          <span class="subdued col col-70">{{article.date}}</span>
+          <span class="subdued col col-30">{{article.name}}</span>
+        </p>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

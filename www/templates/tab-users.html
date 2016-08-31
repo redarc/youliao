@@ -1,0 +1,21 @@
+<ion-view view-title="用户" on-swipe-right="goForward()" on-swipe-left="goBack()">
+
+<ion-content>
+  <div class="list list-inset">
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input ng-change="searchUser(keywords)" ng-model="keywords" type="text" placeholder="Search">
+    </label>
+  </div>
+
+  <ion-list>
+  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="user in users" href="#/tab/dash/{{user.hash}}">
+    <img ng-src="{{user.avatar}}">
+    <h2>{{user.name}} &nbsp {{user.id}}</h2>
+    <p>{{user.signature}}</p>
+    <i class="icon ion-chevron-right icon-accessory"></i>
+  </ion-item>
+  </ion-toggle>
+  </ion-list>
+</ion-content>
+</ion-view>
