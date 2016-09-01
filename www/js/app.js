@@ -59,10 +59,10 @@ angular.module('starter', [
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.users', {
+    url: '/users',
     views: {
-      'tab-dash': {
+      'tab-users': {
         templateUrl: 'templates/tab-users.html',
         controller: 'UsersCtrl'
       }
@@ -70,9 +70,9 @@ angular.module('starter', [
   })
 
   .state('tab.user-detail', {
-    url: '/dash/:userHash',
+    url: '/users/:userHash',
     views: {
-      'tab-dash': {
+      'tab-users': {
         templateUrl: 'templates/user-detail.html',
         controller: 'UserDetailCtrl'
       }
@@ -100,6 +100,6 @@ angular.module('starter', [
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/users');
 
 });
