@@ -1,8 +1,10 @@
 'use strict'
 
 angular.module('starter.controllers')
-  .controller('UsersCtrl', function($scope, $http, $ionicTabsDelegate) {
+  .controller('UsersCtrl', function($scope, $http, $ionicTabsDelegate, $ionicLoading) {
   $scope.keywords = "";
+
+  $ionicLoading.show({template: 'Loading...'});
   requestTopUsers("answer");
 
   $scope.goForward = function () {
@@ -44,9 +46,11 @@ angular.module('starter.controllers')
     })
     .success(function(response, status, headers, config) {
       $scope.users = response.topuser;
+      $ionicLoading.hide();
     })
     .error(function(response, status, headers, config){
       console.error(response);
+      $ionicLoading.hide();
     });
   }
 });

@@ -8,14 +8,14 @@
     </label>
   </div>
 
-  <ion-list>
-  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="user in users" href="#/tab/users/{{user.hash}}">
-    <img ng-src="{{user.avatar}}">
-    <h2>{{user.name}} &nbsp {{user.id}}</h2>
-    <p>{{user.signature}}</p>
-    <i class="icon ion-chevron-right icon-accessory"></i>
-  </ion-item>
-  </ion-toggle>
+  <ion-list show-delete="true" can-swipe="true">
+    <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="user in users" href="#/tab/users/{{user.hash}}">
+      <img ng-src="{{user.avatar}}">
+      <h2>{{user.name}} &nbsp {{user.id}}</h2>
+      <p>{{user.signature}}</p>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </ion-item>
+    </ion-toggle>
   </ion-list>
 </ion-content>
 </ion-view>

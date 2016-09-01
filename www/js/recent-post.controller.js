@@ -1,7 +1,8 @@
 'use strict'
 
 angular.module('starter.controllers')
-  .controller('RecentPostsCtrl', function($scope, $http, $cordovaSQLite, $ionicTabsDelegate) {
+  .controller('RecentPostsCtrl', function($scope, $http, $cordovaSQLite, $ionicTabsDelegate, $ionicLoading) {
+  $ionicLoading.show({template: 'Loading...'});
   requestPosts();
 
   $scope.goForward = function () {
@@ -61,10 +62,12 @@ angular.module('starter.controllers')
     })
     .success(function(response, status, headers, config) {
       $scope.articles = response.posts;
+      $ionicLoading.hide();
       // savePosts(response.posts);
     })
     .error(function(response, status, headers, config){
       console.error(response);
+      $ionicLoading.hide();
     });
   }
 
