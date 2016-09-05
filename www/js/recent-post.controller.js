@@ -5,6 +5,14 @@ angular.module('starter.controllers')
   $ionicLoading.show({template: 'Loading...'});
   requestPosts();
 
+  $scope.$on('$stateChangeSuccess', function() {
+    $scope.loadMoreData();
+  });
+
+  $scope.$on('$ionicView.enter', function(e) {
+    console.log('>> enter again recent page');
+  });
+
   $scope.goForward = function () {
      var selected = $ionicTabsDelegate.selectedIndex();
      if (selected != -1) {
@@ -17,6 +25,26 @@ angular.module('starter.controllers')
      if (selected != -1 && selected != 0) {
          $ionicTabsDelegate.select(selected - 1);
      }
+  }
+
+  $scope.loadMoreData = function () {
+    var articles = $scope.articles;
+    var latestPublishTime = "";
+    if(articles) {
+      latestPublishTime = articles[articles.length-1].publishtime;
+    }
+
+    $http({
+      method: "GET",
+      url: "http://api.kanzhihu.com/getposts/" + latestPublishTime
+    })
+    .success(function(response, status, headers, config) {
+      $scope.articles = $scope.articles.concat(response.posts);
+      $scope.$broadcast('scroll.infiniteScrollComplete');
+    })
+    .error(function(response, status, headers, config){
+      console.error(response);
+    });
   }
 
   // readPosts(function(data) {
@@ -39,8 +67,6 @@ angular.module('starter.controllers')
   // })
 
   function checkNew(publishtime, handleResponse) {
-    console.log(">>>>>>>>> checknew");
-
     $http({
       method: "GET",
       url: "http://api.kanzhihu.com/checknew/" + publishtime
@@ -70,10 +96,6 @@ angular.module('starter.controllers')
       $ionicLoading.hide();
     });
   }
-
-  $scope.$on('$ionicView.enter', function(e) {
-    console.log('>> enter again recent page');
-  });
 
   //refine
   function savePosts(data) {

@@ -2,13 +2,19 @@
   <ion-content>
     <div class="list">
       <ion-item class="item-text-wrap card item-center" ng-repeat="article in articles" href="#/tab/recent-posts/{{article.id}}">
-        <p>{{article.excerpt}}</p>
+        <h1 class="item item-divider">
+          {{article.date}} &nbsp {{article.name | formatPostType}}
+        </h1>
+        <excerpt value={{article.excerpt}}></excerpt>
         <img class="full-image" src="{{article.pic}}">
-        <p class="row">
-          <span class="subdued col col-70">{{article.date}}</span>
-          <span class="subdued col col-30">{{article.name}}</span>
-        </p>
       </ion-item>
     </div>
+
+     <!-- ng-if="moreDataCanBeLoaded" -->
+    <ion-infinite-scroll
+      on-infinite="loadMoreData()"
+      distance="1%">
+    </ion-infinite-scroll>
+
   </ion-content>
 </ion-view>

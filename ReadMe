@@ -13,4 +13,6 @@
 └── www            // application - JS code and libs, CSS, images, etc.
 
 set CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL=../gradle-2.13-all.zip
+export CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL=../gradle-2.13-all.zip
+
 ionic build android
