@@ -1,8 +1,9 @@
 'use strict'
 
 angular.module('starter.controllers')
-  .controller('UsersCtrl', function($scope, $http, $ionicTabsDelegate, $ionicLoading) {
+  .controller('UsersCtrl', function($scope, $http, $ionicTabsDelegate, $ionicLoading, $ionicModal) {
   $scope.keywords = "";
+  $scope.gender = "";
 
   $ionicLoading.show({template: 'Loading...'});
   requestTopUsers("answer");
@@ -24,6 +25,16 @@ angular.module('starter.controllers')
   $scope.searchUser = function(){
     console.log($scope.keywords);
   }
+
+  $scope.selectRankType = function() {
+    console.log("selectRankType...");
+  }
+
+  $ionicModal.fromTemplateUrl('templates/modal.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
 
   function requestTopUsers(value) {
     $http({

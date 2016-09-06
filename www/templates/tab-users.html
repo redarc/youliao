@@ -1,4 +1,9 @@
-<ion-view view-title="用户" on-swipe-right="goForward()" on-swipe-left="goBack()">
+<ion-view view-title="用户排名" on-swipe-right="goForward()" on-swipe-left="goBack()" ng-click="selectRankType()">
+
+  <ion-nav-buttons side="primary">
+    <button class="button button-icon ion-compose" ng-click="modal.show()">
+    </button>
+  </ion-nav-buttons>
 
   <ion-content>
     <div class="list list-inset">
@@ -17,4 +22,29 @@
       </ion-item>
     </ion-list>
   </ion-content>
+
+  <script id="templates/modal.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">排名分类</h1>
+        <button class="button button-clear button-primary" ng-click="modal.hide()">取消</button>
+      </ion-header-bar>
+      <ion-content class="padding">
+        <div class="list">
+          <ion-radio ng-model="choice" ng-value="'A'">提问数</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'B'">回答数</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'C'">专栏文章数</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'C'">赞同数</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'C'">关注数</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'C'">感谢数</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'C'">收藏数</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'C'">公共编辑数</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'C'">公共编辑数</ion-radio>
+
+        <!-- <button class="button button-full button-positive" ng-click="createContact(newUser)">Create</button> -->
+        </div>
+      </ion-content>
+    </ion-modal-view>
+  </script>
+
 </ion-view>
