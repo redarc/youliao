@@ -1,5 +1,6 @@
+This is a demo project based on ionic.
 
-
+NOTE! It could not work now since the free API has deprecated.
 
 ├── bower.json     // bower dependencies
 ├── config.xml     // cordova configuration
